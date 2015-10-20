@@ -28,6 +28,7 @@ namespace twozerofoureight
         public void Notify(Model m)
         {
             UpdateBoard(((TwoZeroFourEightModel) m).GetBoard());
+            UpdateScore(((TwoZeroFourEightModel) m).GetBoard());
         }
 
         private void UpdateTile(Label l, int i)
@@ -56,6 +57,18 @@ namespace twozerofoureight
                     l.BackColor = Color.Green;
                     break;
             }
+        }
+        private void UpdateScore(int[,] board)
+        {
+            int Summary = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    Summary = Summary + board[i, j];
+                }
+            }
+            lblScore.Text = Convert.ToString(Summary);
         }
         private void UpdateBoard(int[,] board)
         {
