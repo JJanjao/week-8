@@ -284,7 +284,7 @@
             this.lblScore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblScore.Location = new System.Drawing.Point(276, 279);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(187, 73);
+            this.lblScore.Size = new System.Drawing.Size(172, 73);
             this.lblScore.TabIndex = 21;
             this.lblScore.Text = "4";
             // 

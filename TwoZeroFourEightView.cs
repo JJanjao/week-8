@@ -14,6 +14,7 @@ namespace twozerofoureight
     {
         Model model;
         Controller controller;
+        TwoZeroFourEightScoreView score = new TwoZeroFourEightScoreView();
        
         public TwoZeroFourEightView()
         {
@@ -68,6 +69,8 @@ namespace twozerofoureight
                     Summary = Summary + board[i, j];
                 }
             }
+            score.score_(Summary);
+            score.Show();
             lblScore.Text = Convert.ToString(Summary);
         }
         private void UpdateBoard(int[,] board)
