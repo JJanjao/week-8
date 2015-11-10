@@ -14,18 +14,19 @@ namespace twozerofoureight
     {
         Model model;
         Controller controller;
-        
-        TwoZeroFourEightScoreView score = new TwoZeroFourEightScoreView();
-       
+        TwoZeroFourEightScoreView s = new TwoZeroFourEightScoreView();
+    
         public TwoZeroFourEightView()
         {
             InitializeComponent();
             model = new TwoZeroFourEightModel();
             model.AttachObserver(this);
+            model.AttachObserver(s);
             controller = new TwoZeroFourEightController();
             controller.AddModel(model);
             controller.ActionPerformed(TwoZeroFourEightController.LEFT);
         }
+
 
         public void Notify(Model m)
         {
@@ -63,9 +64,8 @@ namespace twozerofoureight
         private void UpdateScore(int Score)
         {
            
-            score.score_(Score);
-            score.Show();
             lblScore.Text = Convert.ToString(Score);
+            s.Show();
         }
         private void UpdateBoard(int[,] board)
         {

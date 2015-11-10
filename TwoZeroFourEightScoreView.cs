@@ -10,20 +10,38 @@ using System.Windows.Forms;
 
 namespace twozerofoureight
 {
-    public partial class TwoZeroFourEightScoreView : Form
+    public partial class TwoZeroFourEightScoreView : Form,View
+
+
     {
+        Model model;
+        
         public TwoZeroFourEightScoreView()
         {
+            
             InitializeComponent();
+            model = new TwoZeroFourEightModel();
+           
+            
+        
         }
-
+       
+       
         private void lblScore_Click(object sender, EventArgs e)
         {
 
         }
-        public void score_(int score)
+        public void Notify(Model m)
         {
-            lblScore.Text = Convert.ToString(score);
+            UpdateScore(((TwoZeroFourEightModel)m).GetScore());
         }
+        private void UpdateScore(int score)
+        {
+
+            lblScore.Text = Convert.ToString(score);
+            
+            
+        }
+      
     }
 }
